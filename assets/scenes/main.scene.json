@@ -1,0 +1,105 @@
+{
+  "Entities": [
+    {
+      "Components": {
+        "Transform2D": {
+          "Position": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "Rotation": 0.0
+        },
+        "Camera2D": {
+          "Layers": ["PixelViewport", "Debug"]
+        }
+      }
+    },
+    {
+      "Tag": "MainCamera",
+      "Components": {
+        "Transform2D": {
+          "Position": {
+            "x": -160.0,
+            "y": -90.0
+          },
+          "Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "Rotation": 0.0
+        },
+        "Camera2D": {
+          "Layers": ["Default", "Shadow", "Background"],
+          "Target": "assets://viewports/pixel.viewport.json",
+          "PixelSnapping": true
+        }
+      }
+    },
+    {
+      "Tag": "Player",
+      "Components": {
+        "SpriteRenderer": {
+          "SpriteToRender": "assets://sprites/player/player.sprite.json",
+          "HFrame": 0,
+          "VFrame": 0
+        },
+        "Transform2D": {
+          "Position": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "Rotation": 0.0
+        },
+        "Player": {
+          "MaxSpeed": 200.0,
+          "Acceleration": 20.0,
+
+          "TiltAngle": 25.0,
+          "TiltSpeed": 20.0,
+
+          "CameraTag": "MainCamera",
+          "CameraAimOffsetRatio": 0.2,
+          "CameraSmoothing": 15.0,
+
+          "BulletSpeed": 300.0,
+          "BulletCooldown": 0.1,
+          "BulletBuilder": {
+            "Components": {
+              "SpriteRenderer": {
+                "SpriteToRender": "assets://sprites/player/player_bullet.sprite.json",
+                "HFrame": 0,
+                "VFrame": 0
+              },
+              "Transform2D": {
+                "Position": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "Scale": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "Rotation": 0.0
+              },
+              "Bullet": {
+                "Velocity": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "LifeTime": 5.0
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

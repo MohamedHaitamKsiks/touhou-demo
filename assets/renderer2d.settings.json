@@ -1,0 +1,4 @@
+{
+  "Layers": ["Background", "Shadow", "Default", "PixelViewport", "Debug"],
+  "DefaultMaterial": "assets://materials/default2D.material.json"
+}
